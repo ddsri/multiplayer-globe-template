@@ -50,6 +50,17 @@ function App() {
     },
   });
 
+  // State for user's IP address
+  const [ip, setIp] = useState<string>("");
+
+  // Fetch user's IP address from backend
+  useEffect(() => {
+    fetch("/api/ip")
+      .then((res) => res.json())
+      .then((data) => setIp(data.ip))
+      .catch(() => setIp("Unable to fetch IP"));
+  }, []);
+
   useEffect(() => {
     // The angle of rotation of the globe
     // We'll update this on every frame to make the globe spin
@@ -98,6 +109,11 @@ function App() {
       ) : (
         <p>&nbsp;</p>
       )}
+
+      {/* Show user's IP address */}
+      <p>
+        Your IP address: <b>{ip}</b>
+      </p>
 
       {/* The canvas where we'll render the globe */}
       <canvas
