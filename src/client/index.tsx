@@ -111,9 +111,9 @@ function App() {
       )}
 
       {/* Show user's IP address */}
-      <p>
+      {/* <p>
         Your IP address: <b>{ip}</b>
-      </p>
+      </p> */}
 
       {/* The canvas where we'll render the globe */}
       <canvas
@@ -122,9 +122,18 @@ function App() {
       />
 
       {/* Let's give some credit */}
-      <p>
-        Powered by <a> Desh Deepak Srivastava</a>,{" "}
-      </p>
+    <p>
+      Powered by{" "}
+      <a
+        href="https://devops.ddsri.us.kg"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flashing-link"
+        >
+        Desh Deepak Srivastava
+      </a>
+      ,
+    </p>
     </div>
   );
 }
